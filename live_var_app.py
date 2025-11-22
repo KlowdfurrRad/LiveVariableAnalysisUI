@@ -228,6 +228,6 @@ def display_graph(selected):
     path = os.path.join(DOT_DIR, selected)
     return dot_to_png_base64(path)
 
-
+# 0.0.0.0 ensures that the app is accessible from outside docker container
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
